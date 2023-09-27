@@ -16,16 +16,36 @@ export default function StepOne(){
 
     const style ={border:'1px solid var(--Red)'}
 
-    document.addEventListener('keypress',(e)=>{
-        if(e.key==='Enter'){
-            if(validInfo.name&&validInfo.email&&validInfo.phone){
-                setPage(2)
+    useEffect(()=>{
+
+        const enterClicked =(e)=>{
+
+            const activeElement = document.activeElement
+    
+            const inputName = document.getElementById('name')
+            const inputEmail = document.getElementById('email')
+            const inputPhone = document.getElementById('phone')
+
+            if(e.key==='Enter'){
+                if(activeElement.id===inputName.id){
+                    inputEmail.focus()
+                }
+                else if(activeElement.id===inputEmail.id){
+                    inputPhone.focus()
+                }
+                else if(activeElement.id===inputPhone.id){
+                    nextPage()
+                }
             }
+    
         }
-        else{
-            setNextClicked(true)
-        }
-    })
+
+        document.addEventListener('keypress',enterClicked)
+        return ()=>document.removeEventListener('keypress',enterClicked)
+        
+    },[validInfo])
+
+
 
 
     function nextPage(){
@@ -63,6 +83,10 @@ export default function StepOne(){
         })
 
     },[infoData])
+
+    useEffect(()=>{
+        console.log(validInfo)
+    },[validInfo])
 
     return(
         <div className="col">
