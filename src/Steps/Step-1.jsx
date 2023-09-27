@@ -18,14 +18,16 @@ export default function StepOne(){
 
     document.addEventListener('keypress',(e)=>{
         if(e.key==='Enter'){
-            setPage(2)
+            if(validInfo.name&&validInfo.email&&validInfo.phone){
+                setPage(2)
+            }
         }
     })
 
 
     function nextPage(){
         if(validInfo.name&&validInfo.email&&validInfo.phone){
-            setPage(prevPage=>prevPage+1)
+            setPage(2)
         }
         else{
             setNextClicked(true)

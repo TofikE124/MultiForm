@@ -28,7 +28,7 @@ export default function StepThree(){
 
 
     function nextPage(){
-        setPage(prevPage=>prevPage+1)
+        setPage(4)
     }
 
 

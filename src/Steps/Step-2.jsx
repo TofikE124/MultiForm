@@ -23,7 +23,7 @@ export default function StepTwo(){
     }, 500)
 
     function nextPage(){
-        setPage(prevPage=>prevPage+1)
+        setPage(3)
     }
 
 
