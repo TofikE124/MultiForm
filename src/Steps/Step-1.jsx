@@ -22,6 +22,9 @@ export default function StepOne(){
                 setPage(2)
             }
         }
+        else{
+            setNextClicked(true)
+        }
     })
 
 
