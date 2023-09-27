@@ -1,7 +1,3 @@
-import React, { useEffect, useRef, useState } from "react"
-import {  useOutletContext } from "react-router-dom"
-import { validateName,validateEmail,validatePhone } from "../utils"
-
 export default function StepOne(){
 
     return(

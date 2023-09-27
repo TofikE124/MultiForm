@@ -8,7 +8,7 @@ import StepThree from './Steps/Step-3'
 import StepFour from './Steps/Step-4'
 import ThankYou from './Steps/Thank-You'
 
-
+import NotFound from './Pages/NotFound'
 
 export default function App() {
 
@@ -22,6 +22,7 @@ export default function App() {
           <Route path="step-4" element={<StepFour/>} />
           <Route path="thank-you" element={<ThankYou />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
