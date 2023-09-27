@@ -18,7 +18,7 @@ export default function StepOne(){
 
     document.addEventListener('keypress',(e)=>{
         if(e.key==='Enter'){
-            nextPage()
+            setPage(2)
         }
     })
 
